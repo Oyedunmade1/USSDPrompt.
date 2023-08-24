@@ -10,7 +10,7 @@ function atmOperation(){
             4.> Buy Data
             5.> Pay Bills
             6.> Enquiry Service
-            0.> Next page  
+            0.> Exit  
             `))
 
             //Option 1 (Check Balance)
@@ -40,7 +40,7 @@ function atmOperation(){
                     let amount = Number(prompt("Enter Amount"));
 
                     let pinCheck = Number(prompt("Enter Pin"));
-                    if (pinCheck === pin) {
+                    if (pinUpdate(pinCheck,pin)) {
                         alert(`You have Successfully Transferred #${amount}.00 to ${accountNumber}`);
                     }
                     else {
@@ -51,7 +51,7 @@ function atmOperation(){
                     let amount = Number(prompt("Enter Amount"));
 
                     let pinCheck = Number(prompt("Enter Pin"));
-                    if (pinCheck === pin) {
+                    if (pinUpdate(pinCheck,pin)) {
                         alert(`You have Successfully Transferred #${amount}.00 to ${accountNumber}`);
                     }
                     else {
@@ -62,7 +62,7 @@ function atmOperation(){
                     let amount = Number(prompt("Enter Amount"));
 
                     let pinCheck = Number(prompt("Enter Pin"));
-                    if (pinCheck === pin) {
+                    if (pinUpdate(pinCheck,pin)) {
                         alert(`You have Successfully Transferred #${amount}.00 to ${accountNumber}`);
                     }
                     else {
@@ -95,9 +95,39 @@ function atmOperation(){
             }
             //-------------------------------------------------
 
+        if (option === 0){
+            break;
+        }
         }
         //If USSD is wrong
         
             alert("Connection Problem or invalid MMI code");
         
     }
+    function pinUpdate(p,pin){
+        if (p === pin){
+            return true;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
